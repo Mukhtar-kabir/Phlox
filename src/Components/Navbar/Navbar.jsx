@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import "../Navbar/Navbar.scss";
 import { useState } from "react";
 import { useSelector } from "react-redux";
@@ -48,7 +49,8 @@ const Navbar = () => {
 
         <div className="item">
           <Link className="link" to="/">
-            <img src="Images/profile.PNG" alt="" />
+            <PersonOutlineOutlinedIcon />
+            {/* <img src="Images/profile.PNG" alt="" /> */}
           </Link>
         </div>
 

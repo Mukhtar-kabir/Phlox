@@ -98,36 +98,22 @@
     }
   }
 }
+
 @media (max-width: 900px) {
   .header {
     padding: 1rem;
 
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   }
 
   .left {
     position: relative;
 
-    // nav {
-    //   ul {
-    //     position: absolute;
-    //     background-color: #000;
-    //     display: block;
-
-    //     li {
-    //       padding: 2rem 5rem;
-    //       margin: 0.5rem 0;
-    //       text-align: center;
-
-    //       .link {
-    //         color: #fff;
-    //         margin-right: 0;
-    //       }
-    //     }
-    //   }
-    // }
+    img {
+      width: 2rem;
+    }
   }
 
   .right {
