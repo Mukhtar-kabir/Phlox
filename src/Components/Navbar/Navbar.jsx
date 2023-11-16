@@ -18,7 +18,7 @@ const Navbar = () => {
           <h1>PHLOX</h1>
         </Link>
 
-        <nav>
+        {/* <nav>
           
             <ul className="menu-items">
               <li>Home</li>
@@ -27,7 +27,7 @@ const Navbar = () => {
               <li>Blog</li>
             </ul>
           
-        </nav>
+        </nav> */}
       </div>
 
       <div className="right">
