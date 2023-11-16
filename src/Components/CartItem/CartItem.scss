@@ -1,0 +1,144 @@
+.cart-items {
+  button.reset {
+    border: none;
+    background-color: #fa1d1ded;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fe5656ed;
+    }
+  }
+
+  .cart-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .remove {
+      border: none;
+      background: none;
+      cursor: pointer;
+
+      &:hover {
+        color: #fe5656ed;
+      }
+    }
+
+    .image {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    img {
+      width: 80px;
+    }
+
+    h3 {
+      font-family: sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      width: 120px;
+    }
+
+    .item-details {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+
+      p.price {
+        font-family: sans-serif;
+        font-weight: 600;
+      }
+
+      .quantity {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // border: 1px solid #ddd;
+        border-radius: 3px;
+        width: 80%;
+        // padding: 0.5rem 1rem;
+        gap: 1rem;
+
+        h5 {
+          font-family: sans-serif;
+        }
+
+        .buttons {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 1rem;
+
+          h6 {
+            font-family: sans-serif;
+            font-size: 1rem;
+          }
+
+          button {
+            border: none;
+            padding: 0.5rem 1rem;
+
+            &:hover {
+              background-color: #000000c3;
+              color: #fff;
+              transition: 0.3s;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    button.reset {
+      margin-bottom: 2rem;
+    }
+
+    .cart-item {
+      gap: 0.5rem;
+
+      img {
+        width: 40px;
+      }
+
+      .image {
+        gap: 0.5rem;
+        flex-direction: column;
+        align-items: start;
+        margin-right: -1.5rem;
+
+        h3 {
+          font-size: 0.8rem;
+        }
+      }
+
+      .item-details {
+        gap: 1rem;
+
+        .quantity {
+          padding: 0.5rem;
+          gap: 1rem;
+
+          .buttons {
+            h6 {
+              font-size: 0.8rem;
+            }
+
+            button {
+              padding: 0.1rem 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

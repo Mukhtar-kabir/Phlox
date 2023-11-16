@@ -1,0 +1,147 @@
+.product {
+  padding: 100px 0;
+  width: 90%;
+  margin: auto;
+
+  .container {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .title {
+      margin-left: 1rem;
+
+      h1 {
+        font-family: sans-serif;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        font-family: sans-serif;
+        color: gray;
+        margin-bottom: 2rem;
+      }
+
+      .price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h3 {
+          font-size: 2rem;
+          font-weight: 600;
+          font-family: sans-serif;
+          color: #000;
+        }
+
+        button {
+          border: none;
+          padding: 1rem 3rem;
+          background-color: #000;
+          color: #fff;
+          cursor: pointer;
+          border-radius: 3px;
+
+          &:hover {
+            transition: 0.3s;
+            background-color: #000000d6;
+          }
+        }
+      }
+
+      .quantity {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        width: 30%;
+        padding: 10px;
+        margin-bottom: 2rem;
+
+        h5 {
+          font-family: sans-serif;
+        }
+
+        .buttons {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 1rem;
+
+          h6 {
+            font-family: sans-serif;
+            font-size: 1rem;
+          }
+
+          button {
+            border: none;
+            padding: 0.5rem 1rem;
+
+            &:hover {
+              background-color: #000000c3;
+              color: #fff;
+              transition: 0.3s;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    span {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background-color: #88ed88;
+      border-radius: 2px;
+      padding: 10px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      font-family: sans-serif;
+    }
+
+    img {
+      width: 500px;
+      margin-left: 1rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .container {
+      display: block;
+
+      .title {
+        margin-left: 0;
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        .price {
+          h3 {
+            font-size: 1.3rem;
+          }
+
+          button {
+            padding: 1rem;
+          }
+        }
+
+        .quantity {
+          width: 80%;
+        }
+      }
+
+      span {
+        left: 0;
+      }
+
+      img {
+        width: 100%;
+        margin-bottom: 2rem;
+        margin-left: 0;
+      }
+    }
+  }
+}
