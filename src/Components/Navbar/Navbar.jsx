@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const cart = useSelector((state) => state.phlox.cart);
+  const userInfo = useSelector((state) => state.phlox.userInfo);
+  console.log(userInfo);
 
   return (
     <div className="header">
@@ -45,8 +47,10 @@ const Navbar = () => {
 
         <div className="item">
           <Link className="link" to="/login">
-            <PersonOutlineOutlinedIcon />
-            {/* <img src="Images/profile.PNG" alt="" /> */}
+            <img
+              src={userInfo ? userInfo.image : "/Images/profile.PNG"}
+              alt="user logo"
+            />
           </Link>
         </div>
       </div>

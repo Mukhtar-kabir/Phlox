@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cart: [],
   selectedProduct: null,
+  userInfo: null,
 };
 
 export const phloxSlice = createSlice({
