@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
+import Login from "./pages/Login/Login";
 // import Cart from "./Components/Cart/Cart";
 // import "../src/app.scss";
 
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },
