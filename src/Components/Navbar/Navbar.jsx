@@ -45,14 +45,16 @@ const Navbar = () => {
           </Link>
         </div> */}
 
-        <div className="item">
-          <Link className="link" to="/login">
-            <img
-              src={userInfo ? userInfo.image : "/Images/profile.PNG"}
-              alt="user logo"
-            />
-          </Link>
-        </div>
+        <Link className="link" to="/login">
+          <div className="item">
+            {userInfo && userInfo.image ? (
+              <img src={userInfo.image} alt="user logo" />
+            ) : (
+              <PersonOutlineOutlinedIcon />
+            )}
+            {userInfo && <p className="name">{userInfo.name.split(" ")[0]}</p>}
+          </div>
+        </Link>
       </div>
     </div>
   );

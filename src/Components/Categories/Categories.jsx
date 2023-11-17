@@ -35,7 +35,7 @@ const Categories = () => {
                 <button>Children</button>
               </div>
               <div className="row">
-                <img src="Images/5.JPG" alt="" />
+                <img src="Images/sale.jpeg" alt="" />
                 <button>Sale</button>
               </div>
             </div>

@@ -11,6 +11,11 @@
   background-color: #fafafa;
   box-shadow: 0 2px 5px rgba($color: #888, $alpha: 0.8);
 
+  .link {
+    text-decoration: none;
+    color: #000;
+  }
+
   .left {
     // display: flex;
     // align-items: center;
@@ -52,6 +57,9 @@
     .item {
       margin-left: 1rem;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
 
       img {
         width: 3rem;
