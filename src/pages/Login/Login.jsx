@@ -144,9 +144,9 @@ const Login = () => {
         dispatch(
           addUser({
             id: user.uid,
-            name: user.displayName,
+            name: user.displayName || "No Name", // Provide a default value
             email: user.email,
-            image: user.photoURL,
+            image: user.photoURL || "/Images/profile.PNG",
           })
         );
         console.log("User signed in with email/password:", user);
@@ -160,13 +160,13 @@ const Login = () => {
       });
   };
 
-  const handleSignOut = () => {
+  const handleSignOut = (user) => {
     signOut(auth)
       .then(() => {
         toast.success("Log Out Successfully!");
         dispatch(removeUser());
 
-        console.log("User signed out");
+        console.log("User signed out", user);
       })
       .catch((error) => {
         console.log(error);

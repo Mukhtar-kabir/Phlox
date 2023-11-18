@@ -54,7 +54,7 @@ const Navbar = () => {
           </Link>
         </div> */}
 
-        {/* <Link className="link" to="/login">
+        <Link className="link" to="/login">
           <div className="item">
             {userInfo && userInfo.image ? (
               <img src={userInfo.image} alt="user logo" />
@@ -63,9 +63,9 @@ const Navbar = () => {
             )}
             {userInfo && <p>{getFirstName()}</p>}
           </div>
-        </Link> */}
+        </Link>
 
-        <Link className="link" to="/login">
+        {/* <Link className="link" to="/login">
           <div className="item">
             <img
               src={userInfo ? userInfo.image : "/Images/profile.PNG"}
@@ -73,7 +73,7 @@ const Navbar = () => {
             />
             {userInfo ? <p>{getFirstName()}</p> : null}
           </div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
