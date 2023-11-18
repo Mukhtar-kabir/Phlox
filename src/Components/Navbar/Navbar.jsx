@@ -7,7 +7,16 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
   const cart = useSelector((state) => state.phlox.cart);
   const userInfo = useSelector((state) => state.phlox.userInfo);
-  console.log(userInfo);
+  // console.log(userInfo);
+
+  const getFirstName = () => {
+    if (userInfo && userInfo.name) {
+      const fullName = userInfo.name;
+      const firstName = fullName.split(" ")[0];
+      return firstName;
+    }
+    return "";
+  };
 
   return (
     <div className="header">
@@ -45,14 +54,24 @@ const Navbar = () => {
           </Link>
         </div> */}
 
-        <Link className="link" to="/login">
+        {/* <Link className="link" to="/login">
           <div className="item">
             {userInfo && userInfo.image ? (
               <img src={userInfo.image} alt="user logo" />
             ) : (
               <PersonOutlineOutlinedIcon />
             )}
-            {userInfo && <p className="name">{userInfo.name.split(" ")[0]}</p>}
+            {userInfo && <p>{getFirstName()}</p>}
+          </div>
+        </Link> */}
+
+        <Link className="link" to="/login">
+          <div className="item">
+            <img
+              src={userInfo ? userInfo.image : "/Images/profile.PNG"}
+              alt=""
+            />
+            {userInfo ? <p>{getFirstName()}</p> : null}
           </div>
         </Link>
       </div>
@@ -61,3 +80,24 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+{
+  /* <Link to="/login">
+            <div className="relative">
+              <img
+                className="w-8 h-8 rounded-full"
+                src={
+                  userInfo
+                    ? userInfo.image
+                    : "https://images.pexels.com/photos/4069292/pexels-photo-4069292.jpeg?auto=compress&cs=tinysrgb&w=600"
+                }
+                alt=""
+              />
+            </div>
+          </Link>
+          {userInfo && (
+            <p className="text-base font-bodyFont font-semibold underline underline-offset-2">
+              {userInfo.name}
+            </p>
+          )} */
+}

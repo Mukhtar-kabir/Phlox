@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cart: [],
-  selectedProduct: null,
   userInfo: null,
+  selectedProduct: null,
 };
 
 export const phloxSlice = createSlice({

@@ -5,10 +5,75 @@
     width: 80%;
     margin: auto;
 
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      margin: auto;
+      justify-content: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 5px;
+
+      .password-input {
+        .input {
+          position: relative;
+          width: 100%;
+
+          input {
+            width: 100%;
+          }
+        }
+        .password-toggle {
+          position: absolute;
+          top: 52%;
+          left: 62%;
+          cursor: pointer;
+          color: #666;
+        }
+
+        .visible {
+          color: #2196f3;
+        }
+      }
+
+      label {
+        font-family: sans-serif;
+        font-weight: 600;
+      }
+
+      input {
+        padding: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        outline-color: #5e5ef3;
+      }
+
+      button {
+        background-color: #5e5ef3;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        width: 50%;
+        margin: auto;
+        cursor: pointer;
+      }
+    }
+
+    .error-message {
+      color: #ff0000;
+      margin-top: 10px;
+    }
+
     .google {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      width: 40%;
+      margin: auto;
       gap: 2rem;
       margin-bottom: 1rem;
 
@@ -53,7 +118,23 @@
     .container {
       width: 90%;
 
+      form {
+        width: 100%;
+
+        .password-input {
+          .password-toggle {
+            left: 80%;
+          }
+        }
+
+        button {
+          font-size: 0.7rem;
+        }
+      }
+
       .google {
+        width: 100%;
+
         .image {
           img {
             width: 2.5rem;
@@ -63,10 +144,6 @@
             font-size: 0.7rem;
           }
         }
-      }
-
-      button {
-        font-size: 0.7rem;
       }
     }
   }
