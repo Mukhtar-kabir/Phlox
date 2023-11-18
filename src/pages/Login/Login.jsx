@@ -1,92 +1,3 @@
-// import "../Login/Login.scss";
-// import { useDispatch } from "react-redux";
-// import { useNavigate } from "react-router-dom";
-// import { ToastContainer, toast } from "react-toastify";
-// import { store } from "../../redux/store";
-// import {
-//   GoogleAuthProvider,
-//   getAuth,
-//   signInWithPopup,
-//   signOut,
-// } from "firebase/auth";
-// import { addUser, removeUser } from "../../redux/phloxSlice";
-
-// const Login = () => {
-//   const dispatch = useDispatch();
-//   const navigate = useNavigate();
-//   const auth = getAuth();
-//   const provider = new GoogleAuthProvider();
-//   const handleGoogleLogin = (e) => {
-//     e.preventDefault();
-//     signInWithPopup(auth, provider)
-//       .then((result) => {
-//         const user = result.user;
-//         dispatch(
-//           addUser({
-//             id: user.uid,
-//             name: user.displayName,
-//             email: user.email,
-//             image: user.photoURL,
-//           })
-//         );
-//         setTimeout(() => {
-//           navigate("/");
-//         }, 1500);
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   };
-
-//   const handleSignOut = () => {
-//     signOut(auth)
-//       .then(() => {
-//         toast.success("Log Out Successfully!");
-//         dispatch(removeUser());
-//         console.log("Redux State after removeUser:", store.getState());
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   };
-
-//   return (
-//     <div className="login">
-//       <div className="container">
-//         <div className="google" onClick={handleGoogleLogin}>
-//           <div className="image">
-//             <img src="Images/googleIcon.jpeg" alt="Google Icon" />
-//             <p>Sign in with Google</p>
-//           </div>
-//           <button onClick={handleSignOut}>Sign Out</button>
-//         </div>
-
-//         <div className="google">
-//           <div className="image">
-//             <img src="Images/githubIcon.jpeg" alt="GitHub Icon" />
-//             <p>Sign in with GitHub</p>
-//           </div>
-//           <button>Sign Out</button>
-//         </div>
-//       </div>
-//       <ToastContainer
-//         position="top-left"
-//         autoClose={2000}
-//         hideProgressBar={false}
-//         newestOnTop={false}
-//         closeOnClick
-//         rtl={false}
-//         pauseOnFocusLoss
-//         draggable
-//         pauseOnHover
-//         theme="dark"
-//       />
-//     </div>
-//   );
-// };
-
-// export default Login;
-
 import { useState } from "react";
 import "../Login/Login.scss";
 import { useDispatch } from "react-redux";
@@ -94,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
+import StripeCheckout from "react-stripe-checkout";
 import {
   GoogleAuthProvider,
   getAuth,
@@ -160,13 +72,12 @@ const Login = () => {
       });
   };
 
-  const handleSignOut = (user) => {
+  const handleSignOut = () => {
     signOut(auth)
       .then(() => {
         toast.success("Log Out Successfully!");
         dispatch(removeUser());
-
-        console.log("User signed out", user);
+        // dispatch(resetCart());
       })
       .catch((error) => {
         console.log(error);
@@ -177,7 +88,7 @@ const Login = () => {
     <div className="login">
       <div className="container">
         <div className="form">
-          <form onSubmit={handleEmailPasswordLogin}>
+          <form onClick={handleEmailPasswordLogin}>
             <label>Email:</label>
             <input
               type="email"
@@ -212,14 +123,15 @@ const Login = () => {
             <button type="submit">Sign In </button>
             {/* <button onClick={handleSignOut}>Sign Out</button> */}
           </form>
-
-          <div className="google" onClick={handleGoogleLogin}>
+        </div>
+        <div className="google">
+          <div onClick={handleGoogleLogin}>
             <div className="image">
               <img src="Images/googleIcon.jpeg" alt="Google Icon" />
               <p>Sign in with Google</p>
             </div>
-            <button onClick={handleSignOut}>Sign Out</button>
           </div>
+          <button onClick={handleSignOut}>Sign Out</button>
         </div>
       </div>
       <ToastContainer

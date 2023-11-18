@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import "../Navbar/Navbar.scss";
 import { useSelector } from "react-redux";
 
@@ -59,7 +59,7 @@ const Navbar = () => {
             {userInfo && userInfo.image ? (
               <img src={userInfo.image} alt="user logo" />
             ) : (
-              <PersonOutlineOutlinedIcon />
+              <AccountCircleOutlinedIcon />
             )}
             {userInfo && <p>{getFirstName()}</p>}
           </div>

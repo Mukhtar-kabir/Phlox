@@ -9,6 +9,7 @@ const initialState = {
 export const phloxSlice = createSlice({
   name: "phlox",
   initialState,
+
   reducers: {
     addToCart: (state, action) => {
       const item = state.cart.find((item) => item.id === action.payload.id);
@@ -54,8 +55,16 @@ export const phloxSlice = createSlice({
     },
 
     removeUser: (state) => {
-      state.userInfo = null;
+      return {
+        ...state,
+        userInfo: null,
+      };
     },
+
+    // removeUser: (state) => {
+    //   state.userInfo = null;
+    //   console.log("Redux State after removeUser:", state);
+    // },
   },
 });
 

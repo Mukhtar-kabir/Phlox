@@ -4,11 +4,13 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CardGiftcardOutlinedIcon from "@mui/icons-material/CardGiftcardOutlined";
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const [totalAmt, setTotalAmt] = useState("");
+  const [payNow, setPayNow] = useState(false);
   const cart = useSelector((state) => state.phlox.cart);
-  console.log(cart);
+  const userInfo = useSelector((state) => state.phlox.userInfo);
 
   useEffect(() => {
     let price = 0;
@@ -17,6 +19,14 @@ const Cart = () => {
     });
     setTotalAmt(price.toFixed(2));
   }, [cart]);
+
+  const handleCheckout = () => {
+    if (userInfo) {
+      setPayNow(true);
+    } else {
+      toast.error("Please sign in to checkout!");
+    }
+  };
 
   return (
     <div className="cart">
@@ -57,7 +67,7 @@ const Cart = () => {
                   <h3>Total</h3>
                   <p>$ {totalAmt}</p>
                 </div>
-                <button>proceed to checkout</button>
+                <button onClick={handleCheckout}>proceed to checkout</button>
               </div>
             </div>
           </>
