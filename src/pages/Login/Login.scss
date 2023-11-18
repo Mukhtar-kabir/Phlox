@@ -18,6 +18,7 @@
       border-radius: 5px;
 
       .password-input {
+        position: relative;
         .input {
           position: relative;
           width: 100%;
@@ -28,8 +29,8 @@
         }
         .password-toggle {
           position: absolute;
-          top: 52%;
-          left: 62%;
+          top: 25%;
+          left: 90%;
           cursor: pointer;
           color: #666;
         }
@@ -123,7 +124,7 @@
 
         .password-input {
           .password-toggle {
-            left: 80%;
+            left: 85%;
           }
         }
 
