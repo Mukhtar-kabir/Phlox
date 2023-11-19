@@ -15,6 +15,22 @@
         padding: 1rem 2rem;
         border-radius: 2px;
 
+        .pay {
+          width: 50%;
+          margin: auto;
+          background-color: #0f0f42;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 1rem;
+          font-weight: 600;
+
+          &:hover {
+            background-color: #1e1e71;
+          }
+        }
+
         h3,
         h4 {
           font-family: sans-serif;
