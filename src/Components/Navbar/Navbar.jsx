@@ -64,40 +64,9 @@ const Navbar = () => {
             {userInfo && <p>{getFirstName()}</p>}
           </div>
         </Link>
-
-        {/* <Link className="link" to="/login">
-          <div className="item">
-            <img
-              src={userInfo ? userInfo.image : "/Images/profile.PNG"}
-              alt=""
-            />
-            {userInfo ? <p>{getFirstName()}</p> : null}
-          </div>
-        </Link> */}
       </div>
     </div>
   );
 };
 
 export default Navbar;
-
-{
-  /* <Link to="/login">
-            <div className="relative">
-              <img
-                className="w-8 h-8 rounded-full"
-                src={
-                  userInfo
-                    ? userInfo.image
-                    : "https://images.pexels.com/photos/4069292/pexels-photo-4069292.jpeg?auto=compress&cs=tinysrgb&w=600"
-                }
-                alt=""
-              />
-            </div>
-          </Link>
-          {userInfo && (
-            <p className="text-base font-bodyFont font-semibold underline underline-offset-2">
-              {userInfo.name}
-            </p>
-          )} */
-}
