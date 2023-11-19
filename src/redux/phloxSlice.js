@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState = {
   cart: [],
@@ -11,13 +12,26 @@ export const phloxSlice = createSlice({
   initialState,
 
   reducers: {
+    // addToCart: (state, action) => {
+    //   const item = state.cart.find((item) => item.id === action.payload.id);
+    //   if (item) {
+    //     item.quantity += action.quantity;
+    //     console.log(item.quantity);
+    //     // item.quantity += action.payload.quantity;
+    //   } else {
+    //     state.cart.push(action.payload);
+    //   }
+    // },
+
     addToCart: (state, action) => {
-      const item = state.cart.find((item) => item.id === action.payload.id);
-      if (item) {
-        item.quantity += action.quantity;
-        console.log(item.quantity);
-        // item.quantity += action.payload.quantity;
+      const existingItemIndex = state.cart.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      if (existingItemIndex !== -1) {
+        // state.cart[existingItemIndex].quantity += action.quantity;
       } else {
+        // If the item is not in the cart, add it
         state.cart.push(action.payload);
       }
     },

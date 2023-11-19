@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/phloxSlice";
-// import { addToCart } from "../redux/shopfySlice";
-
 import "../FeaturedProducts/FeaturedProducts.scss";
 import { ToastContainer, toast } from "react-toastify";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
@@ -102,17 +100,26 @@ const FeaturedProducts = () => {
               <div className="price">
                 <span>$ {product.price}</span>
                 <button
-                  onClick={() =>
-                    dispatch(
-                      addToCart({
-                        id: product.id,
-                        title: product.title,
-                        image: product.image,
-                        price: product.price,
-                        quantity: 1,
-                      })
-                    ) && toast.success(`${product.title} is added`)
-                  }
+                  onClick={() => {
+                    const isProductInCart = cart.some(
+                      (item) => item.id === product.id
+                    );
+
+                    if (isProductInCart) {
+                      toast.error(`${product.title} is already in your cart!`);
+                    } else {
+                      dispatch(
+                        addToCart({
+                          id: product.id,
+                          title: product.title,
+                          image: product.image,
+                          price: product.price,
+                          quantity: 1,
+                        })
+                      );
+                      toast.success(`${product.title} is added to cart!`);
+                    }
+                  }}
                 >
                   add to cart
                 </button>

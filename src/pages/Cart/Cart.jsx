@@ -31,7 +31,7 @@ const Cart = () => {
 
   const raveConfig = {
     txref: new Date().toString(),
-    customer_email: userInfo.email,
+    // customer_email: userInfo.email,
     customer_phone: 2348131839432,
     amount: totalAmt,
     PBFPubKey: "FLWPUBK_TEST-3b34569f576cd8ed398883ca2e196bf9-X",
