@@ -61,6 +61,10 @@
       align-items: center;
       gap: 0.5rem;
 
+      .icon {
+        font-size: 2.3rem;
+      }
+
       img {
         width: 3rem;
         border-radius: 50%;
@@ -128,6 +132,12 @@
     .hamburger {
       display: block;
       cursor: pointer;
+    }
+
+    .item {
+      .icon {
+        font-size: 1rem;
+      }
     }
   }
 }

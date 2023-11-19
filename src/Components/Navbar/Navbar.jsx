@@ -59,7 +59,7 @@ const Navbar = () => {
             {userInfo && userInfo.image ? (
               <img src={userInfo.image} alt="user logo" />
             ) : (
-              <AccountCircleOutlinedIcon />
+              <AccountCircleOutlinedIcon className="icon" />
             )}
             {userInfo && <p>{getFirstName()}</p>}
           </div>
