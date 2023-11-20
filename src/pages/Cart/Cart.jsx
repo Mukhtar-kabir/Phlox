@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import CardGiftcardOutlinedIcon from "@mui/icons-material/CardGiftcardOutlined";
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
-import { RaveProvider, RavePaymentButton } from "react-ravepayment";
+import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
 
 const Cart = () => {
   const [totalAmt, setTotalAmt] = useState("");
@@ -29,20 +29,33 @@ const Cart = () => {
     }
   };
 
-  const raveConfig = {
-    txref: new Date().toString(),
-    // customer_email: userInfo.email,
-    customer_phone: 2348131839432,
-    amount: totalAmt,
-    PBFPubKey: "FLWPUBK_TEST-3b34569f576cd8ed398883ca2e196bf9-X",
-    onSuccess: (response) => {
-      console.log("Payment successful:", response);
-      // Handle successful payment
+  const config = {
+    public_key: "FLWPUBK_TEST-3b34569f576cd8ed398883ca2e196bf9-X",
+    tx_ref: Date.now(),
+    amount: 100,
+    currency: "NGN",
+    payment_options: "card,mobilemoney,ussd",
+    customer: {
+      email: userInfo.email,
+      phone_number: "08131839432",
+      name: "john doe",
     },
-    onClose: () => {
-      console.log("Payment closed");
-      // Handle payment closed
+    customizations: {
+      title: "Phlox",
+      description: "Payment for items in cart",
+      // logo: "https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg",
+      logo: "Images/icon.png",
     },
+  };
+
+  const fwConfig = {
+    ...config,
+    text: "Pay to Phlox",
+    callback: (response) => {
+      console.log(response);
+      closePaymentModal(); // this will close the modal programmatically
+    },
+    onClose: () => {},
   };
 
   return (
@@ -87,11 +100,12 @@ const Cart = () => {
                 <button onClick={handleCheckout}>proceed to checkout</button>
                 {payNow && (
                   <div>
-                    <RaveProvider {...raveConfig}>
+                    <FlutterWaveButton {...fwConfig} className="pay" />
+                    {/* <RaveProvider {...raveConfig}>
                       <RavePaymentButton className="pay">
                         Pay to Phlox
                       </RavePaymentButton>
-                    </RaveProvider>
+                    </RaveProvider> */}
                   </div>
                 )}
               </div>
