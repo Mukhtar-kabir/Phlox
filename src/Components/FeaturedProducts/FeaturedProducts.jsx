@@ -77,9 +77,9 @@ const FeaturedProducts = () => {
     <div className="featuredProducts">
       <h1>Featured Products</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod debitis
-        animi quis sit nihil beatae illum fuga at nobis necessitatibus cum
-        maxime, laboriosam obcaecati dolor, incidunt ea, tenetur itaque soluta!
+        Elevate your style with our Featured Products. Explore the latest trends
+        in Men`s and Women`s fashion. Quality meets fashion-forward designs.
+        Shop now!
       </p>
 
       <div className="items">

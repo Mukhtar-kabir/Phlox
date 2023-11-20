@@ -5,6 +5,7 @@ import Footer from "./Components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
 import Login from "./pages/Login/Login";
+import Category from "./pages/Category/Category";
 // import Cart from "./Components/Cart/Cart";
 // import "../src/app.scss";
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <Product />,
+      },
+      {
+        path: "/categories/:id",
+        element: <Category />,
       },
       {
         path: "/cart",

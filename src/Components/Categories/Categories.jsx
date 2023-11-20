@@ -6,8 +6,8 @@ const Categories = () => {
       <div className="items">
         <h1>Categories</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi
-          aspernatur iure autem?
+          Explore chic categories, from apparel to accessories. Elevate your
+          style effortlessly with our curated collection. Shop now!
         </p>
         <div className="col">
           <div className="row">
