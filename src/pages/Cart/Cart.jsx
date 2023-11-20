@@ -32,11 +32,11 @@ const Cart = () => {
   const config = {
     public_key: "FLWPUBK_TEST-3b34569f576cd8ed398883ca2e196bf9-X",
     tx_ref: Date.now(),
-    amount: 100,
+    amount: totalAmt,
     currency: "NGN",
     payment_options: "card,mobilemoney,ussd",
     customer: {
-      email: userInfo.email,
+      email: userInfo ? userInfo.email : "",
       phone_number: "08131839432",
       name: "john doe",
     },
