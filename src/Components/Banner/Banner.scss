@@ -5,3 +5,9 @@
   background-position: center;
   background-size: cover;
 }
+
+@media (max-width: 900px) {
+  .banner {
+    height: 10rem;
+  }
+}
