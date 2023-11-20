@@ -38,13 +38,13 @@ const Cart = () => {
     customer: {
       email: userInfo ? userInfo.email : "",
       phone_number: "08131839432",
-      name: "john doe",
+      name: "phlox",
     },
     customizations: {
       title: "Phlox",
       description: "Payment for items in cart",
       // logo: "https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg",
-      logo: "Images/icon.png",
+      logo: "/Images/logo.jpeg",
     },
   };
 
