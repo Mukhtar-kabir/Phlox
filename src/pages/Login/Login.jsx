@@ -37,7 +37,7 @@ const Login = () => {
             image: user.photoURL,
           })
         );
-        console.log("User signed in with Google:", user);
+
         setTimeout(() => {
           navigate("/");
         }, 1500);
