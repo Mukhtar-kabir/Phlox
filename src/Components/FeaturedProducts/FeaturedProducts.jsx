@@ -85,11 +85,6 @@ const FeaturedProducts = () => {
       <div className="items">
         {products.map((product) => (
           <div className="item" key={product.id}>
-            {/* <img
-              src={product.image}
-              alt={product.title}
-              onClick={() => handleSelection(product)}
-            /> */}
             <img
               src={`../../${product.image}`}
               alt={product.title}
